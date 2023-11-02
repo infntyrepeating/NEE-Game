@@ -155,7 +155,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39dca68ca9fe69d499bb5d17ee3f43c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MoveSpeed: 1
+  MoveSpeed: 3
   DashRange: 5
   DashCooldown: 30
   PlayerAnimation: {fileID: 0}
