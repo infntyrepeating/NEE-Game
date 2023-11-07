@@ -15,48 +15,27 @@ public class playerMovement : MonoBehaviour
     public Animator PlayerAnimation;
 
 
-    // PLAYER CONTROLS
-    public KeyCode dash = KeyCode.L;
-    public KeyCode up = KeyCode.W;
-    public KeyCode right = KeyCode.D;
-    public KeyCode left = KeyCode.A;
-    public KeyCode down = KeyCode.S;
-
-
     // PRIVATE VARIABLES
-    private Transform PlayerBody;
     private Rigidbody2D body;
 
-
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        PlayerBody = GetComponent<Transform>();
-        PlayerAnimation = GetComponent<Animator>();
         body = GetComponent<Rigidbody2D>();
     }
 
-    void Update()
+    private void Update()
     {
+        // Get input for movement
+        float horizontalInput = Input.GetAxis("Horizontal");
+        float verticalInput = Input.GetAxis("Vertical");
 
+        // Create a movement vector based on the input
+        Vector2 movement = new Vector2(horizontalInput, verticalInput).normalized;
 
-        // PLAYER CONTROLS --- GOTTA WORK THIS BECAUSE I WAS USING A NON-COLLIDER SYSTEM, NEED TO CHANGE TO RIGIDBODY
-        if (Input.GetKey(up)) {
-            Vector3 movement = Vector3.up * MoveSpeed * Time.deltaTime;
-            PlayerBody.Translate(movement);
-        }
-        if (Input.GetKey(down)) {
-            Vector3 movement = Vector3.down * MoveSpeed * Time.deltaTime;
-            PlayerBody.Translate(movement);
-        }
+        // Move the player
+        body.velocity = new Vector2(movement.x * MoveSpeed, movement.y * MoveSpeed);
 
-        if (Input.GetKey(right)) {
-            Vector3 movement = Vector3.right * MoveSpeed * Time.deltaTime;
-            PlayerBody.Translate(movement);
-        }
-        if (Input.GetKey(left)) {
-            Vector3 movement = Vector3.left * MoveSpeed * Time.deltaTime;
-            PlayerBody.Translate(movement);
-        }
+        // You can also restrict diagonal movement to have the same speed as horizontal/vertical
+        transform.rotation = Quaternion.Euler(0f, 0f, 0f);
     }
 }
