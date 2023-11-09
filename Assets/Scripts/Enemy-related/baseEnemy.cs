@@ -11,7 +11,7 @@ public class baseEnemy : MonoBehaviour
     public LayerMask playerLayer;
 
     private Transform targetArea;
-    private bool movingToStart = true;
+
 
     private void Start()
     {
@@ -34,12 +34,12 @@ public class baseEnemy : MonoBehaviour
             if (targetArea == areaStart)
             {
                 targetArea = areaEnd;
-                movingToStart = false;
+               
             }
             else
             {
                 targetArea = areaStart;
-                movingToStart = true;
+                
             }
         }
     }
