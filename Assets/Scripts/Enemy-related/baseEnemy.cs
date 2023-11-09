@@ -46,10 +46,11 @@ public class baseEnemy : MonoBehaviour
 
     private void CheckPlayerProximity()
     {
-        Collider[] colliders = Physics.OverlapSphere(transform.position, detectionRange, playerLayer);
-        if (colliders.Length > 0)
+        Collider2D collider = Physics2D.OverlapCircle(transform.position, detectionRange);
+
+        if (collider != null && collider.CompareTag("Player"))
         {
-            Debug.Log("Player is close!");
+          Debug.Log("Player is close!!!");
         }
     }
 
