@@ -11,6 +11,9 @@ public class MainMenuButtonController : MonoBehaviour
     public GameObject quitButton;
     public GameObject settingsButton;
     public GameObject creditsButton;
+    public GameObject AudioButton;
+    public GameObject KeybindsButton;
+
 
     public void PlayGame()
     {
@@ -51,10 +54,12 @@ public class MainMenuButtonController : MonoBehaviour
                 child.gameObject.SetActive(true);
             }
         }
-        else
-        {
-            Debug.LogError("HowToPlayScreen object is not assigned!");
-        }
+       
+    }
+
+    public void Audio()
+    {
+
     }
 
     public void ToggleButton()
@@ -72,10 +77,7 @@ public class MainMenuButtonController : MonoBehaviour
                 child.gameObject.SetActive(!child.gameObject.activeSelf);
             }
         }
-        else
-        {
-            Debug.LogError("HowToPlayScreen object is not assigned!");
-        }
+       
 
         // Toggle the state of Play, Quit, and HowToPlay buttons
         playButton.SetActive(!playButton.activeSelf);
