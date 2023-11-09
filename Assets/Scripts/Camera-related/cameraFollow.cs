@@ -19,9 +19,6 @@ public class cameraFollow : MonoBehaviour
 
         // Calculate the desired position for the camera
         Vector3 desiredPosition = target.position + offset;
-        
-        // Use Vector3.Lerp to smoothly move the camera to the desired position
-        Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, smoothSpeed * Time.deltaTime);
-        transform.position = smoothedPosition;
+        transform.position = desiredPosition;
     }
 }

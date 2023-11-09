@@ -157,9 +157,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MoveSpeed: 3
-  DashRange: 5
+  DashDuration: 0.5
+  DashSpeedMultiplier: 5
   DashCooldown: 30
-  PlayerAnimation: {fileID: 0}
 --- !u!212 &33429305
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -243,7 +243,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 08197d9d43116c340a61f1c83f665028, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -648,7 +648,7 @@ MonoBehaviour:
   areaStart: {fileID: 1037562687}
   areaEnd: {fileID: 2119877726}
   movementSpeed: 3
-  detectionRange: 5
+  detectionRange: 2.5
   playerLayer:
     serializedVersion: 2
     m_Bits: 64
@@ -780,7 +780,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 08197d9d43116c340a61f1c83f665028, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
