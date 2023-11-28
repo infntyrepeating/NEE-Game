@@ -50,12 +50,7 @@ public class CameraPan : MonoBehaviour
             yield return null;
         }
 
-        // Disable the renderer of the specified game object
-        Renderer objectRenderer = objectToDisable.GetComponent<Renderer>();
-        if (objectRenderer != null)
-        {
-            objectRenderer.enabled = false;
-        }
+        objectToDisable.SetActive(false);
 
         // Wait for 3 seconds
         yield return new WaitForSeconds(1.5f);
@@ -78,11 +73,7 @@ public class CameraPan : MonoBehaviour
             cameraFollowScript.enabled = true;
         }
 
-        // Re-enable the renderer of the specified game object
-        if (objectRenderer != null)
-        {
-            objectRenderer.enabled = true;
-        }
+       
 
         isColliding = false;
     }
